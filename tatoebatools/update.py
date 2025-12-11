@@ -176,5 +176,7 @@ def _get_urls_to_check(table_names, language_codes, oriented_pair):
                 )
         elif tbl == "queries":
             urls.add(f"{ROOT_URL}/stats/{tbl}.csv.bz2")
+        elif tbl == "users_sentences":
+            urls.add(f"{ROOT_URL}/exports/{tbl}.csv")
 
     return urls

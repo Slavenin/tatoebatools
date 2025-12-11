@@ -63,6 +63,8 @@ class Download:
             "sentences_in_lists",
             "sentences_with_audio",
             "user_languages",
+            "sentences",
+            "users_sentences",
         ):
             if self.name.endswith(tbl):
                 return tbl

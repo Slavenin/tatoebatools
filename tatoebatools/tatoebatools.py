@@ -225,6 +225,76 @@ class Tatoeba:
                 verbose=verbose,
             )
         )
+        
+    def sentences(self, language, scope="all", update=True, verbose=True):
+        """Iterates through all tagged sentences in this language.
+
+        Parameters
+        ----------
+        language : str
+            The IS0 639-3 code of a Tatoeba supported language.
+            Use '*' to designate all supported languages.
+            Call the 'all_languages' attribute to get the list
+            of all supported languages.
+        scope : str
+            The scope of the data.
+            Use default 'all' to get all latest data. Use 'added' or 'removed'
+            to get only differences with the former local data.
+        update : bool
+            Whether a data file is updated before being read, by default True
+        verbose : bool
+            Whether update steps are printed, by default True
+
+        Returns
+        -------
+        iterator
+            Sentence instances with attributes
+        """
+        return iter(
+            Table(
+                "sentences",
+                language_codes=[language],
+                data_dir=self._dir,
+                scope=scope,
+                update=update,
+                verbose=verbose,
+            )
+        )
+        
+    def user_sentence(self, language, scope="all", update=True, verbose=True):
+        """Iterates through all tagged sentences in this language.
+
+        Parameters
+        ----------
+        language : str
+            The IS0 639-3 code of a Tatoeba supported language.
+            Use '*' to designate all supported languages.
+            Call the 'all_languages' attribute to get the list
+            of all supported languages.
+        scope : str
+            The scope of the data.
+            Use default 'all' to get all latest data. Use 'added' or 'removed'
+            to get only differences with the former local data.
+        update : bool
+            Whether a data file is updated before being read, by default True
+        verbose : bool
+            Whether update steps are printed, by default True
+
+        Returns
+        -------
+        iterator
+            UserSentence instances with attributes
+        """
+        return iter(
+            Table(
+                "sentences",
+                language_codes=[language],
+                data_dir=self._dir,
+                scope=scope,
+                update=update,
+                verbose=verbose,
+            )
+        )
 
     def user_lists(self, scope="all", update=True, verbose=True):
         """Iterate trough all sentences' lists
