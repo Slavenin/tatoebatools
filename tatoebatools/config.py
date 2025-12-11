@@ -35,6 +35,8 @@ SUPPORTED_TABLES = (
     "sentences_with_audio",
     "user_languages",
     "queries",
+    "sentences",
+    "users_sentences",
 )
 
 DIFFERENCE_TABLES = (
@@ -49,6 +51,8 @@ DIFFERENCE_TABLES = (
     "jpn_indices",
     "sentences_with_audio",
     "user_languages",
+    "sentences",
+    "users_sentences",
 )
 
 TABLE_CLASSES = {
@@ -64,6 +68,8 @@ TABLE_CLASSES = {
     "sentences_with_audio": SentenceWithAudio,
     "user_languages": UserLanguage,
     "queries": Query,
+    "sentences": Sentence,
+    "users_sentences": UserSentence
 }
 
 TABLE_CSV_PARAMS = {

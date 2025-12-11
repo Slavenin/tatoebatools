@@ -9,6 +9,7 @@ class JpnIndex(Base):
 
     id = Column(Integer, autoincrement=True, primary_key=True)
     sentence_id = Column(Integer)
+    meaning_id = Column(Integer)
     text = Column(String(2000), nullable=True)
 
 
@@ -18,11 +19,11 @@ class Link(Base):
     sentence_id = Column(Integer, primary_key=True)
     translation_id = Column(Integer, primary_key=True)
 
-class Sentences(Base):
+class Sentence(Base):
     __tablename__ = "sentences"
 
     sentence_id = Column(Integer, primary_key=True)
-    lang = Column(String(4), nullable=False)
+    lang = Column(String(4), nullable=False, primary_key=True)
     text = Column(Text, nullable=False)
 
 class SentenceBase(Base):
@@ -69,7 +70,7 @@ class SentenceWithAudio(Base):
     license = Column(String(50), nullable=True)
     attribution_url = Column(String(1024), nullable=True)
 
-class UsersSentences(Base):
+class UserSentence(Base):
     __tablename__ = "users_sentences"
 
     id = Column(Integer, autoincrement=True, primary_key=True)
