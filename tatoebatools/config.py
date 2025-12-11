@@ -53,7 +53,6 @@ DIFFERENCE_TABLES = (
     "jpn_indices",
     "sentences_with_audio",
     "user_languages",
-    "sentences",
     "users_sentences",
 )
 
