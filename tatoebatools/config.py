@@ -19,6 +19,8 @@ from .transcriptions import Transcription
 from .user_languages import UserLanguage
 from .user_lists import UserList
 from .utils import list_attributes
+from .sentences import Sentence
+from.users_sentences import UserSentence
 
 DATA_DIR = files(__package__).joinpath("data")
 
