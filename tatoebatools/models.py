@@ -9,7 +9,6 @@ class JpnIndex(Base):
 
     id = Column(Integer, autoincrement=True, primary_key=True)
     sentence_id = Column(Integer)
-    meaning_id = Column(Integer)
     text = Column(String(2000), nullable=True)
 
 
@@ -19,6 +18,12 @@ class Link(Base):
     sentence_id = Column(Integer, primary_key=True)
     translation_id = Column(Integer, primary_key=True)
 
+class Sentences(Base):
+    __tablename__ = "sentences"
+
+    sentence_id = Column(Integer, primary_key=True)
+    lang = Column(String(4), nullable=False)
+    text = Column(Text, nullable=False)
 
 class SentenceBase(Base):
     __tablename__ = "sentences_base"
@@ -31,7 +36,7 @@ class SentenceCC0(Base):
     __tablename__ = "sentences_CC0"
 
     sentence_id = Column(Integer, primary_key=True)
-    lang = Column(String(4), nullable=True)
+    lang = Column(String(4), nullable=False)
     text = Column(String(1500), nullable=False)
     date_last_modified = Column(DateTime, nullable=True)
 
@@ -40,8 +45,8 @@ class SentenceDetailed(Base):
     __tablename__ = "sentences_detailed"
 
     sentence_id = Column(Integer, primary_key=True)
-    lang = Column(String(4), nullable=True)
-    text = Column(String(1500))
+    lang = Column(String(4), nullable=False)
+    text = Column(Text, nullable=False)
     username = Column(String(20), nullable=True)
     date_added = Column(DateTime, nullable=True)
     date_last_modified = Column(DateTime, nullable=True)
@@ -62,8 +67,17 @@ class SentenceWithAudio(Base):
     audio_id = Column(Integer)
     username = Column(String(20), nullable=True)
     license = Column(String(50), nullable=True)
-    attribution_url = Column(String(255), nullable=True)
+    attribution_url = Column(String(1024), nullable=True)
 
+class UsersSentences(Base):
+    __tablename__ = "users_sentences"
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    username = Column(String(20), nullable=True)
+    sentence_id = Column(Integer, primary_key=True)
+    check = Column(Integer, nullable=True)
+    date_added = Column(DateTime, nullable=True)
+    date_last_modified = Column(DateTime, nullable=True)
 
 class Tag(Base):
     __tablename__ = "tags"
@@ -85,18 +99,19 @@ class Transcription(Base):
     __tablename__ = "transcriptions"
 
     sentence_id = Column(Integer, primary_key=True)
-    lang = Column(String(4), nullable=True)
+    lang = Column(String(4), nullable=False)
     script_name = Column(String(4), primary_key=True)
     username = Column(String(20), nullable=True)
-    transcription = Column(String(10000))
+    transcription = Column(Text, nullable=False)
 
 
 class UserLanguage(Base):
     __tablename__ = "user_languages"
 
-    lang = Column(String(4), nullable=True, primary_key=True)
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    lang = Column(String(4), nullable=True)
     skill_level = Column(Integer, nullable=True)
-    username = Column(String(20), nullable=True, primary_key=True)
+    username = Column(String(20), nullable=True)
     details = Column(Text, nullable=True)
 
 
