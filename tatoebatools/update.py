@@ -149,6 +149,7 @@ def _get_urls_to_check(table_names, language_codes, oriented_pair):
         elif tbl in {
             "jpn_indices",
             "user_lists",
+            "users_sentences"
         }:
             urls.add(f"{ROOT_URL}/exports/{tbl}.tar.bz2")
         elif tbl in {
@@ -177,7 +178,5 @@ def _get_urls_to_check(table_names, language_codes, oriented_pair):
                 )
         elif tbl == "queries":
             urls.add(f"{ROOT_URL}/stats/{tbl}.csv.bz2")
-        elif tbl == "users_sentences":
-            urls.add(f"{ROOT_URL}/exports/{tbl}.csv")
 
     return urls
