@@ -134,6 +134,7 @@ def _get_urls_to_check(table_names, language_codes, oriented_pair):
             "tags",
             "transcriptions",
             "user_languages",
+            "sentences",
         ):
             if language_codes == ["*"]:
                 urls.add(f"{ROOT_URL}/exports/{tbl}.tar.bz2")
@@ -148,7 +149,6 @@ def _get_urls_to_check(table_names, language_codes, oriented_pair):
         elif tbl in {
             "jpn_indices",
             "user_lists",
-            "sentences",
         }:
             urls.add(f"{ROOT_URL}/exports/{tbl}.tar.bz2")
         elif tbl in {
