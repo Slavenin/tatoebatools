@@ -218,6 +218,16 @@ TABLE_DATAFRAME_PARAMS = {
         "date_format": "%Y-%m-%d %H:%M:%S",
         "na_values": ["N", "0000-00-00 00:00:00"],
     },
+    "users_sentences": {
+        "names": list_attributes(SentenceDetailed),
+        "parse_dates": ["date_added", "date_last_modified"],
+        "date_format": "%Y-%m-%d %H:%M:%S",
+        "na_values": ["N", "0000-00-00 00:00:00"],
+    },
+    "sentences": {
+        "names": list_attributes(SentenceCC0),
+        "na_values": ["N"],
+    },
     "sentences_CC0": {
         "names": list_attributes(SentenceCC0),
         "parse_dates": ["date_last_modified"],
