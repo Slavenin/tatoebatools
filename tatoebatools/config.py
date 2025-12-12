@@ -117,7 +117,7 @@ TABLE_CSV_PARAMS = {
         "quoting": csv.QUOTE_NONE,
         "quotechar": '"',
         "lineterminator": "\n",
-        "nb_cols": len(list_attributes(Sentence)),
+        "nb_cols": len(list_attributes(UserSentence)),
     },
     "transcriptions": {
         "delimiter": "\t",
