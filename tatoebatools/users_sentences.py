@@ -7,8 +7,8 @@ class UserSentence:
         self, username, sentence_id, check, date_added, date_last_modified
     ):
         # the id of the sentence
-        self._sid = sentence_id
         self._usr = username
+        self._sid = sentence_id
         self._check = check
         self._dtad = date_added
         self._dtlm = date_last_modified
