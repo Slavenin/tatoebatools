@@ -218,13 +218,13 @@ TABLE_DATAFRAME_PARAMS = {
         "na_values": ["N", "0000-00-00 00:00:00"],
     },
     "users_sentences": {
-        "names": list_attributes(SentenceDetailed),
+        "names": list_attributes(UserSentence),
         "parse_dates": ["date_added", "date_last_modified"],
         "date_format": "%Y-%m-%d %H:%M:%S",
         "na_values": ["N", "0000-00-00 00:00:00"],
     },
     "sentences": {
-        "names": list_attributes(SentenceCC0),
+        "names": list_attributes(Sentence),
         "na_values": ["N"],
     },
     "sentences_CC0": {
