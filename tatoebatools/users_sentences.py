@@ -14,15 +14,15 @@ class UserSentence:
         self._dtlm = date_last_modified
 
     @property
-    def sentence_id(self):
-        """Get the id of the sentence of this transcription"""
-        return int(self._sid)
-
-    @property
     def username(self):
         """Get the name of the user who have this language skill"""
         return self._usr
     
+    @property
+    def sentence_id(self):
+        """Get the id of the sentence of this transcription"""
+        return int(self._sid)
+
     @property
     def check(self):
         """Get the name of the user who have this language skill"""
