@@ -245,7 +245,7 @@ class Table:
             if (
                 not language_codes
                 or "*" in language_codes
-                or table_name in ("queries", "sentences", "users_sentences")
+                or table_name in ("queries", "users_sentences", "user_lists")
             )
             else "tsv"
         )
