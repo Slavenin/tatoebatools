@@ -52,17 +52,8 @@ class Download:
 
     @property
     def table(self):
-        """Get the name of the table from which this datafile is extracted"""
-        for tbl in (
-            "user_lists",
-            "jpn_indices",
-            "queries",
-            "users_sentences",
-        ):
-            if self.name == tbl:
-                return tbl
-        
-        for tbl in (
+        """Get the name of the table from which this datafile is extracted"""      
+        tbls = [
             "sentences_base",
             "sentences_detailed",
             "sentences_CC0",
@@ -73,11 +64,20 @@ class Download:
             "sentences_with_audio",
             "user_languages",
             "sentences",
+            "user_lists",
+            "jpn_indices",
+            "queries",
+            "users_sentences",
+        ]
+        
+        for tbl in tbls:
+            if self.name == tbl:
+                return tbl
             
-        ):
+        for tbl in tbls:  
             if self.name.endswith(tbl):
                 return tbl
-
+        
         return
 
     @property
