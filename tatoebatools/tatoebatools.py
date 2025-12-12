@@ -287,7 +287,7 @@ class Tatoeba:
         """
         return iter(
             Table(
-                "sentences",
+                "user_sentence",
                 language_codes=[language],
                 data_dir=self._dir,
                 scope=scope,
